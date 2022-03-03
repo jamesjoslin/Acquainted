@@ -1,0 +1,153 @@
+<!--amazon product listings and other resources page. want to make this dynamic as well as add ministry invites-->
+{% extends 'base.html' %}
+
+{% block title %}Inspired?{% endblock %}
+
+{%block content %}
+
+{% load static %}
+
+
+<!--necessary css-->
+<head>
+  <style>
+  .emphasized { font-style: italic; }
+  .container a:not([id="movie"]) {
+  color: #000000;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<!--title for resources page-->
+<div class="  bg-white">
+  <div class="container-fluid py-5 p-5" style="background-image: url('static/#'); background-size: cover;">
+    <h1 class="display-2">Resources</h1>
+    <br>
+    <p class="lead">Acquainted has been a blast to work on, however, I believe the best part of this lies in making processes dynamic and sustainable. One of my passions is getting people to understand what they're good at, and equipping them to maximize their potential. That is the true nature of leadership, after all. </p>        
+    <p class="lead">To attempt this, I am putting up some resources that have helped me get to where I am today. Talking to a stranger may make you want to hide, and it's definitely not for everyone, but I believe that the resources here are useful for all areas of life. In fact, I think it is our highest responsibility to steward our influence well in everything we do. Whether it's thinking clearly, communicating effectively, or just plain food for thought, these resources form much of me, and I think can be very helpful for others.</p>
+  </div>
+</div>
+  <br><br><br><br>
+
+
+
+<!-- need to make this into a new app in order for it to be dynamic. :( wish I had time-->
+<!-- book list -->
+
+<div class="container pb-4 mb-4 border-bottom">
+  <h1 class="display-6">See Books:</h1>
+  <p class="lead">My absolute essentials:</p>
+
+   
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card ">
+        <a href="https://www.amazon.com/gp/product/0310101468?ie=UTF8&linkCode=li3&tag=acquaintedsit-20&linkId=9127eb74d883d1fbfd678b556fd7f172&language=en_US&ref_=as_li_ss_il" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71UbCFh+r1L.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tactics</h5>
+          <p class="card-text">This is a must read for absolutely everyone. Anyone interested in effectively taking a critical look at their worldview, or that of another, using essential conversation techniques.</p>
+        </a>
+        </div>
+      </div>
+    </div>
+      
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3sIsPV5" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61cthPy+AAL.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            
+          <h5 class="card-title">God Space</h5>
+          <p class="card-text">This book brings a healthy contrast to <span class="emphasized">Tactics</span>. Both of these books pair extremely well in my opinion, and are a definite must.</p>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3LEMPjW" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81hcDt1EUvL.jpg" class="card-img-top" alt="...">
+        <div class="card-body">  
+          <h5 class="card-title">Renovation of the Heart</h5>
+          <p class="card-text"><span class="emphasized">Renovation of the Heart</span> is one of the best works explaining the process of human formation I have ever come across. Between this and <span class="emphasized">Atomic Habits</span>, there is little left to say on practically becoming who we were meant to be.</p>
+        </a>
+        <a href='https://amzn.to/3rRbv0P' class="link-primary">Audiobook here</a>.
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3BmJ0LC" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81E7fYJuiTL.jpg" class="card-img-top" alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title">Atomic Habits</h5>
+          <p class="card-text"><span class="emphasized">Atomic Habits</span> is a game changer for thinking about what it means to improve oneself. If our character is the sum total of one's habits, then this book is a character changing machine.</p>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3LALeM8" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51AXJI-nQ-S.jpg" class="card-img-top" alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title">The Cure</h5>
+          <p class="card-text"><span class="emphasized">The Cure</span> lays out a core theme of the historical letter to the Galatians through story format, as well as shares what happens when we live out of something other than who we truly are. I placed this book on the list because I end up recommending it all too often.</p>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3uXmXKi" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/511nMkkRGnL.jpg" class="img-fluid card-img-to " alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title">Building a Discipleship Culture</h5>
+          <p class="card-text">I am generally hesitant to recommend "leadership" material for various reasons, but if I had to choose a model for serving others, <span class="emphasized">Building a Discipleship Culture</span> by Mike Breen would be about the closest I get. He creates his model from manuscripts of John.</p>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <a href="https://amzn.to/3BmpSNK" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61rGW91SEjL.jpg" class="img-fluid card-img-to " alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title">Talking to Strangers</h5>
+          <p class="card-text">I am a big fan of Malcolm Gladwell, and I think one of his best works is <span class="emphasized">Talking to Strangers</span>. This book takes a culturally relavent dive into hot topic issues through the lense of anonymity, and is deeply humbing if you allow it to be.</p>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--end of book list-->
+  <!--other media (want to add upcoming events)-->
+<br><br><br><br>
+  <div class="container pb-4 mb-4 ">
+    <h1 class="display-6">See Other Media:</h1> 
+    <br>
+    <p class="lead">Two of my favorite movies are <a href="https://amzn.to/3JyNUZ4" style="text-decoration: none;" id="movie">The Heart of Man</a> and <a href="https://amzn.to/34HzUxb" style="text-decoration: none;" id="movie">A Beautiful Day in the Neighborhood</a>. Both give excellent perspective on what it means to experience grace in radical ways. The first is an artistic retelling of the famous "prodigal son" story, and the second explains what happens when you bump up against an individual who truly loves others from the right place.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+
+{% endblock %}

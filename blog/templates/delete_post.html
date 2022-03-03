@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Edit Post - Acquainted
+    {% endblock %}
+
+<!-- page for deleting Posts -->
+{% block content %}
+<br/>
+<div class="container">
+{% if user.is_authenticated %}
+    <h1>Delete Post</h1>
+    <br/>
+    <h3>
+        Are you sure you want to delete: {{blogpost.title}} created on {{ blogpost.post_date }}?
+    </h3>
+    <br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <a href="{% url 'blogpage' %}" class="btn btn-outline-dark">Back</a>
+            <button class="btn btn-outline-danger">Delete</button>
+        </form>
+    </div>
+    {% else %}
+    <h3>
+        <center>
+        Get acquainted with me some other way! 
+        <br/>
+        <br/>
+        Try <a href="{% url 'me' %}">learning about me here.</a>
+        </center>
+        <br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+    </h3>
+{% endif %}
+</div>
+{% endblock %}
+    
+    

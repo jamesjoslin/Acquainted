@@ -1,0 +1,82 @@
+<!--This section is the about acquainted sections-->
+
+{% extends 'base.html' %}
+
+{% block title %}Acquainted{% endblock %}
+
+{%block content %}
+
+{% load static %}
+
+<!--header for page along with blurb-->
+<div class="p-5  bg-white">
+  <div class="container-fluid py-5">
+    <h1 class="display-2">About</h1>
+    <br>
+    <p class="lead">Acquainted is my personal project to learn how to engage my community, serve, and make authentic connections. I believe that what makes us human is our desire to be fully known and loved. Acquainted, this blog, (<a href="https://www.youtube.com/channel/UCV2cu49-22CyFyBbq2YFPGw">which is by no means</a> <a href="https://www.humansofnewyork.com/"> the first of its kind</a>,) uses the unique power of encountering a stranger in order to both know and love individuals. Strangers have a unique vantage point, because they can side-step our fear of judgement and shame. A positive encounter with a stranger can have huge consequences our lives! I personally had an encounter with a stranger, and it changed the trajectory of my entire life. We are now the closest of friends, and He showed me I have that the ability to change lives too.</p>
+    <p class="lead">The great thing about this project is that it doesn't stop at a greeting. Acquainted is only a success if it is inviting people into a life-long process of being fully known and loved, and teaching others to do the same. The end goal is a formed relationship.     </p>
+    <p class="lead">Acquainted is my way of using my gifts to lead others. If you are interested in gaining resources to do something similar, I would suggest heading to the <a href="{% url 'resources' %}">resources page</a>.</p>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+
+<!--mission statement block-->
+
+<div class="container">
+  <div class="container mb-4">
+    <h1 class="display-5">Mission Statement:</h1>
+    <br>
+    <center>
+      <p class="lead">"To invite everyday people into communities that love Jesus by invitational and challenging interviews and intentional social introductions."</p>
+    </center>
+    <br><br>
+  </div>
+  <div class="container pb-2 mb-4">
+    <h1 class="display-5">Vision Statement:</h1>
+    <br>
+    <center>
+      <p class="lead">"To have Christianly built communities that desire to know Jesus, think christianly, and serve in the manner that he does." (Adapted from the manuscript of Mark, 3:13-14)</p>
+    </center>
+    <br><br>
+  </div>
+<!--core values section of the page-->
+  <br><br><br><br><br><br>
+  <div class="container pb-2 mb-4 ">
+    <h1 class="display-5">Core Values:</h1>
+    <br>
+    <ul>
+      <li>
+        <p class="lead"><strong>LOVE:</strong> an unconditional commitment to go out and serve my neighbor's highest good. (1 John 4:7-11)</p>
+      </li>
+      <li>
+        <p class="lead"><strong>INVITATION:</strong> to join community and be given resources to disciple as well. (2 Timothy 2:2, Matthew 28:19)</p>
+      </li>
+      <li>
+        <p class="lead"><strong>TRUTH:</strong> also rationality - the framework for clear thinking, responsiveness, and leading others wisely. In other words, truth is the key that enables others to achieve the classically defined happiness. (Matthew 7:24-25)</p>
+      </li>
+      <li>
+        <p class="lead"><strong>GRACE:</strong> unmerited favor and kindness. Grace and truth is what makes an individual see and know God. (Romans 6:14)</p>
+      </li>
+      <li>
+        <p class="lead"><strong>SPEECH:</strong> a standard of orally/aurally relating to others which seeks the heart of matters in order to invite and challenge. (Colossians 4:6, James 1:19, Proverbs 12:25, Titus 2:7-8, and the historical accounts of Jesus)</p>
+      </li>
+    </ul>
+    
+  </div>     
+</div>
+  
+<br><br><br><br><br><br>
+<!-- link into other sections before footer-->
+<div class="container">
+  <center>
+    <a href="{% url 'me' %}" class="btn btn-dark btn-lg btn-block">Learn about me</a>
+    <a href="{% url 'blogpage' %}" class="btn btn-lg btn-outline-dark btn-block">See the blog here</a>
+  </center>
+</div>
+
+</body>
+</html>
+
+
+{% endblock %}

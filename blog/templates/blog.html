@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  {% extends 'base.html' %}
+      {% block title %}
+          Acquainted Blog
+      {% endblock %}
+  {% block content %}
+  <br/>
+  
+<!-- main post page -->
+  <body>
+<!-- Featured Post-->
+    <main class="container">
+      {% for blogpost in object_list %}
+      {% if forloop.first %}
+      <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic"><a style="text-decoration:none; color:inherit" href="{% url 'post-details' blogpost.pk %}">{{ blogpost.title }}</a></h1>
+          <p class="lead my-3">{{ blogpost.header }}</p>
+          <p class="lead mb-0"><a href="{% url 'post-details' blogpost.pk %}" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+          <small>
+            {% if user.is_authenticated %} -
+                <a href="{% url 'update-post' blogpost.pk %}">edit</a>
+                <a href="{% url 'delete-post' blogpost.pk %}">remove</a>
+            {% endif %}
+        </small>
+      </div>
+      {% endif %}
+      {% endfor %}
+<!-- End Featured Post-->
+
+      </br>
+
+<!-- Posts -->
+      <h1 class="pb-4 mb-4 fst-italic border-bottom">
+        Recent:
+      </h1>
+
+
+
+      <div class="row g-5">
+        <div class="col-md-8">
+          {% for blogpost in object_list %}
+          {% if not forloop.first %}
+          <article class="blog-post">
+          <a style="text-decoration:none; color:inherit"  href="{% url 'post-details' blogpost.pk %}">
+            <h2 class="blog-post-title">{{ blogpost.title }}</h2></a>
+            <p class="blog-post-meta">{{ blogpost.post_date }} - {{ blogpost.author.first_name }}</a>
+              <small>
+                {% if user.is_authenticated %} -
+                    <a href="{% url 'update-post' blogpost.pk %}">edit</a>
+                    <a href="{% url 'delete-post' blogpost.pk %}">remove</a>
+                {% endif %}
+              </small>
+            </p>
+            <p class="pb-4 border-bottom">
+              <a style="text-decoration:none; color:inherit"  href="{% url 'post-details' blogpost.pk %}"> {{ blogpost.header | safe }}</a>
+            </p>
+          </article>
+          {% endif %}
+          {% endfor %}
+        </div>    
+        <!-- End Posts-->
+      <!-- Side Bar-->
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="fst-italic"><a style="text-decoration:none; color:inherit"  href="{% url 'about' %}">About</a></h4>
+              <p class="mb-0">Welcome to my blog! Here is where experiences are tracked, thoughts are recorded, and people can look behind the scenes as Acquainted takes shape. Feel free to browse and catch up.</p>
+            </div>
+          </div>
+        </div>             
+      <!-- End Side Bar-->
+        <center>
+          <a href="{% url 'all-posts' %}" class="btn btn-outline-dark btn-block">See All Posts</a>
+        </center>
+
+      </div>
+    </main>
+  </body>
+
+
+
+</html>
+
+
+{% endblock %}
+    

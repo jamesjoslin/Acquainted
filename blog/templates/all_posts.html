@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  {% extends 'base.html' %}
+      {% block title %}
+          Acquainted Blog
+      {% endblock %}
+  {% block content %}
+
+  
+  
+  <!-- Posts -->
+  <body>
+    <main class="container">
+    </br>
+    <h1 class="pb-4 mb-4 fst-italic border-bottom">
+      Recent:
+    </h1>
+    <div>
+      <div>
+        {% for blogpost in object_list %}
+        <article class="blog-post">
+          <a style="text-decoration:none; color:inherit"  href="{% url 'post-details' blogpost.pk %}">
+            <h2 class="blog-post-title">{{ blogpost.title }}</h2></a>
+            <p class="blog-post-meta">{{ blogpost.post_date }} - {{ blogpost.author.first_name }}</a>
+              <small>
+                {% if user.is_authenticated %} -
+                    <a href="{% url 'update-post' blogpost.pk %}">edit</a>
+                    <a href="{% url 'delete-post' blogpost.pk %}">remove</a>
+                {% endif %}
+              </small>
+            </p>
+            <p class="pb-4 border-bottom">
+              <a style="text-decoration:none; color:inherit "  href="{% url 'post-details' blogpost.pk %}"> {{ blogpost.header | safe }}</a>
+        </br>
+          </article>
+        
+          {% endfor %}
+        </div>    
+        <!-- End Posts-->
+        {% if is_paginated %}
+        <!-- Some logic for navigating the posts -->
+        {% if page_obj.has_previous %}
+        <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+        <br><br>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        <!-- section for if you reach the end of the list -->
+{% else %}
+  <h3>
+    <br/>
+    <center>
+    Out of posts! 
+    <br/>
+    <br/>
+<a href="{% url 'blogpage' %}">Back to main blog page here</a>
+    </center>
+    <br/><br/>
+</h3>
+  {% endif %}
+
+      
+    </div>
+    </main>
+  </body>
+</html>
+{% endblock %}
+    

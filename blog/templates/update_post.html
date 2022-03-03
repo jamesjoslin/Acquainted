@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Edit Post - Acquainted
+    {% endblock %}
+
+{% block content %}
+<!-- where authorized user can update any of the posts if so desired-->
+
+<br/>
+<div class="container">
+{% if user.is_authenticated %}
+
+    <h1>Do it better.</h1>
+    <br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {{form.as_p}}
+            <a href="{% url 'blogpage' %}" class="btn btn-outline-dark">Back</a>
+            <button class="btn btn-outline-dark">Update</button>
+            <a href="{% url 'delete-post' blogpost.pk %}" class="btn btn-outline-danger">Delete Post</a>
+        </form>
+    </div>
+    {% else %}
+    <h3>
+        <center>
+        Get acquainted with me some other way! 
+        <br/>
+        <br/>
+        Try <a href="{% url 'me' %}">learning about me here.</a>
+        </center>
+        <br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+    </h3>
+{% endif %}
+</div>
+{% endblock %}

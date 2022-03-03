@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Register - Acquainted
+    {% endblock %}
+
+
+{% block content %}
+
+<!-- How the authenticated user changer their profile -->
+
+<div class="container">
+{% if user.is_authenticated %}
+ <h1>
+     Update Profile
+ </h1>
+<br/>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        Ignore all that other password stuff. You can change your password using <a href="../password/">this form.</a>
+        <br/>
+        <br/>
+        <a href="{% url 'blogpage' %}" class="btn btn-outline-dark">Back</a>
+        <button class="btn btn-outline-dark">Update Profile</button>
+    </form>
+<br/>
+</div>
+{% else %}
+<h3>
+    <center>
+    Get acquainted with me some other way! 
+    <br/>
+    <br/>
+    Try <a href="{% url 'me' %}">learning about me here.</a>
+    </center>
+    <br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+</h3>
+{% endif %}
+</div>
+{% endblock %}

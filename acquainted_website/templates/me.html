@@ -1,0 +1,49 @@
+<!--me page is a basic portfolio-->
+{% extends 'base.html' %}
+
+{% block title %}
+Meet Me
+{% endblock %}
+
+{%block content %}
+{% load static %}
+<!--photo css-->
+<head>
+    <style>
+    img {
+        border-radius: 50%;
+    }
+    </style>
+</head>
+<!--a lovely picture of yours truly-->
+<div class="container-fluid py-5">
+  <br>
+  <br>
+  <center>
+    <img src="{% static 'me2.jpeg' %}" width="400" class="rounded-circular;">
+  </center>
+</div>
+<!--blurb section-->
+<div class="p-5  bg-white">
+  <div class="container-fluid py-5">
+    <h1 class="display-2">Meet Me</h1>
+    <br>
+    <p class="lead">My name is James Joslin and this project was a long time in the making. Having been to four different high schools and three different colleges, my life has been shaped by many introductions to new communities. I was given the opportunity to spend a year with the <a href="https://www.impact360institute.org/">Impact360 Institute</a>, which helped me develop my soft skills and worldview. As a result of these experiences, and in wake of COVID-19, I am so excited to finally get out and build my own community. I am currently working on my undergrad as a computer engineer, and hope to get an internship soon. (A.K.A hire me!) I coded and deployed this website myself. (Thank you, YouTube).</p>
+    <p class="lead">I would be lying if I said that this project was my own idea. Ideas are often borrowed, and this one is no exception. I hold a high regard for my roommates in college for starting me off and Impact360 for giving me the leadership tools. I am a huge fan of both <a href="https://www.humansofnewyork.com/">Brandon Stanton</a> and <a href="https://www.youtube.com/channel/UCV2cu49-22CyFyBbq2YFPGw">Thoraya Maronesy</a>. I encourage you to check them out—what they do is truly incredible.</p>
+    <p class="lead">Acquainted is my way of using my gifts to lead others. If you are interested in gaining resources to do something similar, I would suggest heading to the <a href="{% url 'resources' %}">resources page</a>.</p>
+  </div>
+</div>
+
+<!--links-->
+<center><p class="lead">Want to get in touch? Email me at <a href="mailto:Acquaintedmail@gmail.com">Acquaintedmail@gmail.com</a></p>
+</center> 
+<br><br><br><br><br><br>
+
+<div class="container">
+  <center>
+    <a href="{% url 'resources' %}" class="btn btn-dark btn-lg btn-block">Learn about resources</a>
+    <a href="{% url 'blogpage' %}" class="btn btn-lg btn-outline-dark btn-block">See the blog here</a>
+  </center>
+</div>
+
+{% endblock %} 

@@ -1,0 +1,86 @@
+<!--home page for website-->
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+{% load static %}
+<!--big title for homepage section-->
+<div class="p-5 mb-4 background-color: #eae7df rounded-3" style="background-image: url('#'); background-size: cover; ">
+  <div class="container-fluid py-5" >
+    <h1 class="display-2">Welcome to Acquainted.</h1>
+    <p class="lead">A project to build community</p>
+    <a href="{% url 'about' %}" class="btn btn-dark btn-lg btn-block">Learn more</a>
+    <a href="{% url 'blogpage' %}" class="btn btn-lg btn-outline-dark btn-block">See the blog here</a>
+  </div>
+</div>
+
+<!--social media api section-->
+<div class="container">
+      <div class="container pb-4 mb-4">
+        <h1 class="display-2"></h1>
+        <p class="lead">
+            
+        </p>
+      </div>
+      <div class="container pb-4 mb-4 border-bottom">
+        <h1 class="display-6">See latest stories and posts</h1>
+        <p class="lead">
+            from instagram:
+        </p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+      </div>
+      <div class="container pb-4 mb-4 border-bottom">
+        <p class="lead">
+            from facebook:
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+      </div>
+    </div>
+   
+    </div>
+
+
+
+
+{% endblock %}

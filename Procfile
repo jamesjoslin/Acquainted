@@ -1,0 +1,1 @@
+web: gunicorn acquainted_website.wsgi

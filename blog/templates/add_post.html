@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Add Post - Acquainted
+    {% endblock %}
+
+<!--page that lets me add a post-->
+{% block content %}
+<div class="container">
+<br/>
+{% if user.is_authenticated %}
+    <h1>Whats New?</h1>
+    <br/>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }} <!--where all the magic happens. basically links the html with the forms.py-->
+            <a href="{% url 'blogpage' %}" class="btn btn-outline-dark">Back</a>
+            <button class="btn btn-outline-dark">Post</button>
+        </form>
+    </div>
+    {% else %}
+    <h3>
+        <center>
+        Get acquainted with me some other way! 
+        <br/>
+        <br/>
+        Try <a href="{% url 'me' %}">learning about me here.</a>
+        </center>
+        <br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+    </h3>
+{% endif %}
+</div>
+{% endblock %}
+    
